@@ -5,7 +5,7 @@
 This application is ideal for **business intelligence, content management, research efficiency, and customer engagement**.
 
 
-## Key Features
+## 🚀 Key Features
 
 * **Automatic Summarization**: Reduce long-form text to concise summaries while retaining critical information.
   
