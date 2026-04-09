@@ -136,7 +136,7 @@ SE @ Karachi University | AI & ML Practitioner | Applying technology to create r
 ## 🔗 Connect with Me
 
 - **LinkedIn:** [Syeda Arifa Batool](https://www.linkedin.com/in/arifa-batool/)  
-- **Kaggle:** [Syeda Arifa Batool](https://www.kaggle.com/arifa-batool/)  
+- **Kaggle:** [Syeda Arifa Batool](https://www.kaggle.com/thearifabatool)  
 - **Email:** [thearifabatool@gmail.com](mailto:thearifabatool@gmail.com)
 
 ⭐ If you find this project useful, feel free to star the repository!
