@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SummarAI Professional Text Summarization</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">✦</div>
+                SummarAI
+            </div>
+            <div class="status">
+                <div class="w-2.5 h-2.5 bg-orange-400 rounded-full animate-pulse"></div>
+                T5 Model Online
+            </div>
+        </header>
+
+        <main>
+            {% if not model_loaded %}
+            <div class="error-banner">
+                <span style="font-size: 2.2rem;">⚠️</span>
+                <div>
+                    <strong>Model failed to load</strong><br>
+                    <span style="font-size: 0.97rem;">Check the terminal for the exact error and make sure your summary_model folder is correct.</span>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="grid">
+               <div class="card">
+                    <h2>Input Text</h2>
+                    <form method="post" id="summarize-form">
+                        <textarea 
+                            name="text" 
+                            placeholder="Paste your article, report, meeting notes, research paper, or any long text here..."
+                            required>{{ original_text | default('') }}</textarea>
+                        
+                        <button type="submit" id="submit-btn" class="submit-btn">
+                            Generate Summary
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.8rem;">
+                        <h2>Generated Summary</h2>
+                        {% if summary %}
+                        <button id="copy-btn" class="copy-btn">
+                            📋 Copy Summary
+                        </button>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="summary-area" id="summary-area">
+                        {% if summary %}
+                            <p id="summary-text">{{ summary }}</p>
+                        {% else %}
+                            <div style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #78716c; padding: 6rem 2rem;">
+                                <div style="font-size: 5.5rem; margin-bottom: 2rem; opacity: 0.1;">📝</div>
+                                <p style="font-size: 1.45rem; font-weight: 500;">Summary will appear here</p>
+                                <p style="margin-top: 16px; max-width: 360px;">Your fine-tuned T5 model delivers clear and concise results</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            SummarAI • Flask + Transformers • Professional Dark Orange Theme
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
